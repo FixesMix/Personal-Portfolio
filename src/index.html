@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="custom.css">
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+  <title>Aura :| </title>  
+  <link rel="shortcut icon" href="Assets/haloBullet.ico" type="image/x-icon">
+</head>
+<body>
+
+  <div class="animated-background"></div>
+
+  <div class="header-container container my-2 p-4">
+    
+  </div>
+  
+  <!--Main container-->
+  <div class="container my-5 p-4 fade-in">
+    
+    
+    
+    <!--goes in main con-->
+    <div class="row">
+      <div class="col">
+        Column
+      </div>
+
+
+        <div class="col">
+
+          <div id="projectCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">  <!--Active always assigned to first item in carousel, nothing else-->
+                <a href="https://github.com/FixesMix/star-slug" target="_blank">
+                <img src="Assets/488873.png" class=d-block w-100 alt="Project 1">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="https://github.com/FixesMix/Database-App" target="_blank">
+                <img src="Assets/petasawa.png" class=d-block w-100 alt="Project 2">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="https://github.com/FixesMix/FixesMix" target="_blank">
+                <img src="Assets/petasawa1.png" class=d-block w-100 alt="Project 3">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="https://github.com/FixesMix/CPS-3330---Lab1-" target="_blank">
+                <img src="Assets/petasawa3.png" class=d-block w-100 alt="Project 4">
+                </a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div> 
+      
+    </div>
+      
+
+
+
+    
+  </div>
+  
+  
+
+<!--Fancy Mallow footer-->
+<footer class="footer-container container text-center text-white py-3">
+  <div class="sliding-footer">
+    <img src="Assets/mallow_Walk_BW.gif" class="footer-image" w-100 alt="footer">
+    <div class="Feeties"></div>
+ </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Seperate JS into different files-->
+
+<!--fade in Main Container on startup.JS-->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+const container = document.querySelector(".fade-in");
+container.classList.add("show"); 
+});
+
+  
+</script>
+
+
+<!-- Mallow Feeties.JS -->
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const footerImage = document.querySelector(".footer-image");
+  const FeetiesContainer = document.querySelector(".sliding-footer");
+  const maxFeeties = 100; 
+  const Feeties = []; 
+  let feetiesIndex = 0; //Footprint count
+
+
+
+  // Establish object pooling
+  for (let i = 0; i < maxFeeties; i++) {
+    const feeties = document.createElement("div");
+    feeties.classList.add("feeties");
+    feeties.style.display = "none"; //At first, all footprints are hidden
+    FeetiesContainer.appendChild(feeties);
+    Feeties.push(feeties);
+  }
+
+  
+  //Establish footprint interval
+  const interval = 500; 
+  setInterval(() => {
+    const characterRight = parseFloat(
+      getComputedStyle(footerImage).right.replace("px", "")
+    );
+
+    
+
+    //If the character is visible, footprints may be placed.
+    if (characterRight >= -50 && characterRight <= FeetiesContainer.offsetWidth) {
+      const feeties = Feeties[feetiesIndex];
+      feeties.style.display = "block"; // make visible
+      feeties.style.right = `${characterRight}px`; // Update print position
+      feeties.style.bottom = "10%"; // prints are always near bottom of footer
+      feetiesIndex = (feetiesIndex + 1) % maxFeeties; // Cycling through pool
+    }
+  }, interval);
+});
+
+</script>
+
+</body>
+</html>
+
+
+
+

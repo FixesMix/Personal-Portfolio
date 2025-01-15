@@ -1,0 +1,185 @@
+/*animated background starts here*/
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  background-color: rgb(27, 27, 27);
+}
+
+
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(37, 37, 37) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(51, 51, 51) 1px, transparent 1px);
+  background-size: 50px 50px;
+  /* Line spacing */
+
+
+
+
+  animation: moveBackground 5s linear infinite;
+  z-index: -1;
+}
+
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100px 100px;
+
+  }
+}
+
+/*animated background ends here*/
+
+
+
+
+
+
+
+
+
+
+
+/* Main container*/
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+  color: rgb(43, 43, 43);
+  text-align: center;
+}
+
+
+body .header-container {
+  background-color: rgba(44, 44, 44, 0.404);
+}
+
+.container {
+  background-color: rgba(126, 126, 126, 0.562);
+  border-radius: 1.5vh;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+
+/*main container animation*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s ease, transform 2s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.col {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: .5vh;
+  padding: 0vh;
+}
+
+
+p {
+  background-color: rgb(243, 243, 243);
+  padding: 1%;
+  border-radius: 5%;
+}
+
+
+/*slideshow*/
+.carousel-inner {
+  height: 100%;
+  overflow: hidden;
+  border-radius: .5vh;
+}
+
+.carousel-inner img {
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  background-color: #ddd;
+
+}
+
+.carousel-item img {
+  transition: filter 0.3s ease;
+
+}
+
+.carousel-item img:hover {
+  filter: brightness(1.1);
+
+}
+
+.footer-container {
+  background-color: rgba(44, 44, 44, 0.404);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Mallow making footprints*/
+
+
+.sliding-footer {
+  overflow: hidden;
+  position: relative;
+  height: 5vh;
+  background-color: rgba(44, 44, 44, 0.404);
+  border-radius: .8vh;
+}
+
+.footer-image {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  transform: translateY(0);
+  /* Maintain alignment */
+  animation: walkInfinite 60s linear infinite;
+  z-index: 10;
+}
+
+
+@keyframes walkInfinite {
+  0% {
+    right: -5%;
+  }
+
+  100% {
+    right: 120%;
+  }
+}
+
+
+.feeties {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(248, 248, 248, 0.521);
+  border-radius: 50%;
+  bottom: 10%;
+  transform: translateY(0);
+  z-index: 5;
+  /* Ensure Feeties are behind the character */
+}
