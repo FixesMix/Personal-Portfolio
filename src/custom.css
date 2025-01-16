@@ -65,7 +65,7 @@ body .header-container {
 }
 
 .container {
-  background-color: rgba(126, 126, 126, 0.562);
+  background-color: rgba(85, 85, 85, 0.562);
   border-radius: 1.5vh;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
@@ -85,8 +85,13 @@ body .header-container {
 }
 
 
+.card {
+  border: 1px solid rgb(255, 0, 0);
+}
+
+
 .col {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.652);
   border: none;
   border-radius: .5vh;
   padding: 0vh;
