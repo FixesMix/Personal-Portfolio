@@ -38,9 +38,21 @@ body {
   }
 }
 
+
+
+
 /*animated background ends here*/
 
+a.navbar-brand {
+  color: rgb(255, 255, 255) !important;
+  font-size: 90%;
+}
 
+a.navbar-brand:hover {
+  color: rgb(231, 0, 0) !important;
+  font-size: 90%;
+  transition: 2s color;
+}
 
 
 a:link {
@@ -62,8 +74,16 @@ a:active {
 }
 
 
+.contact:hover {
+  opacity: 68%;
+  transition: opacity .7s ease;
+}
 
+.contact:active {
+  opacity: 30%;
+  transition: opacity .3s ease;
 
+}
 
 
 /* Main container*/
@@ -80,11 +100,14 @@ body .header-container {
   background-color: rgba(44, 44, 44, 0.404);
 }
 
+.navbar {
+  background-color: black;
+}
+
 .container {
   background-color: rgba(85, 85, 85, 0.562);
   border-radius: 1.5vh;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-
 }
 
 
@@ -127,7 +150,7 @@ body .header-container {
 
 
 p {
-  background-color: rgb(243, 243, 243);
+  background-color: rgba(243, 243, 243, 0);
   padding: 1%;
   border-radius: 5%;
 }
@@ -141,7 +164,7 @@ p {
 }
 
 .carousel-inner img {
-  height: 60vh;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   background-color: #ddd;
@@ -161,12 +184,6 @@ p {
 .footer-container {
   background-color: rgba(44, 44, 44, 0.404);
 }
-
-
-
-
-
-
 
 
 
