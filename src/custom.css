@@ -43,7 +43,23 @@ body {
 
 
 
+a:link {
+  color: rgb(243, 0, 0);
+  text-decoration: none;
+}
 
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: rgb(255, 136, 199);
+
+}
+
+a:active {
+  color: rgb(66, 31, 82);
+}
 
 
 
@@ -87,8 +103,20 @@ body .header-container {
 
 .card {
   border: 1px solid rgb(255, 0, 0);
+
 }
 
+.tooltip {
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10%;
+}
+
+.tooltip-inner {
+  background-color: #e20303;
+  border-radius: 10%;
+  box-shadow: none;
+}
 
 .col {
   background-color: rgba(255, 255, 255, 0.652);

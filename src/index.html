@@ -3,34 +3,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa1zYd0N8PC6c7cGvtbnyz7LnxPo7s8z7pjUTITUJ4SnFtp1RvF8FQysuF4" crossorigin="anonymous">
   <link rel="stylesheet" href="custom.css">
-
+  <script src="scripts.js"></script>
   <script src="bootstrap.bundle.min.js"></script>
-
-
   <title>Aura :| </title>  
   <link rel="shortcut icon" href="Assets/haloBullet.ico" type="image/x-icon">
 </head>
 <body>
-  
-  
-<!-- XD-->
-
   <div class="animated-background"></div>
 
-  <div class="header-container container my-2 p-4"></div>
+<!--Header-->
+  <div class="header-container container my-2 p-4">
+
+  </div>
   
   <!--Main container-->
   <div class="container my-5 p-4 fade-in">
-    
-    
-    
-    <!--goes in main con-->
     <div class="row">
-      <div class="col">
-
-        <!--tooltip not working. why?-->
+      <div class="col d-flex justify-content-center align-items-center">
         <div class="card" style="width:18rem;">
           <div class="card-body">
             <p class="card-text"> lorem ipsulorem ipsulorem ipsulorem ipsulorem ipsu
@@ -38,16 +29,19 @@
             </p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="right" title="List of languages">Languages</li>
-            <li class="list-group-item">Frameworks</li>
-            <li class="list-group-item">Certifications</li>
+            <li class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-html="true" title="C<br>C#<br>Java<br>">Languages</li>
+            <li class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-html="true" title="ASP.NET<br>Bootstrap<br>Unity<br>">Frameworks</li>
+            <li class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-html="true" title="Foundational C# with Microsoft<br><br>AI4ALL College Pathways Participant "><a href="https://www.nierconcert.com/" target="_blank">Certifications</a></li>   
           </ul>
+        <div class="contact d-flex justify-content-center align-items-center">
+          <br><br><br>
+          <img src="Assets/mail.png">
+        </div>
+
         </div>
       </div>
-      
 
         <div class="col">
-
           <div id="projectCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
             <div class="carousel-inner">
               <div class="carousel-item active">  <!--Active always assigned to first item in carousel, nothing else-->
@@ -81,13 +75,7 @@
             </button>
           </div>
       </div> 
-      
     </div>
-      
-
-
-
-    
   </div>
   
   
@@ -101,73 +89,6 @@
 </footer>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!--Seperate JS into different files-->
-
-<!--fade in Main Container on startup.JS-->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-const container = document.querySelector(".fade-in");
-container.classList.add("show"); 
-});
-
-  
-</script>
-
-
-<!-- Mallow Feeties.JS -->
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const footerImage = document.querySelector(".footer-image");
-  const FeetiesContainer = document.querySelector(".sliding-footer");
-  const maxFeeties = 100; 
-  const Feeties = []; 
-  let feetiesIndex = 0; //Footprint count
-
-
-
-  // Establish object pooling
-  for (let i = 0; i < maxFeeties; i++) {
-    const feeties = document.createElement("div");
-    feeties.classList.add("feeties");
-    feeties.style.display = "none"; //At first, all footprints are hidden
-    FeetiesContainer.appendChild(feeties);
-    Feeties.push(feeties);
-  }
-
-  
-  //Establish footprint interval
-  const interval = 500; 
-  setInterval(() => {
-    const characterRight = parseFloat(
-      getComputedStyle(footerImage).right.replace("px", "")
-    );
-
-    
-
-    //If the character is visible, footprints may be placed.
-    if (characterRight >= -50 && characterRight <= FeetiesContainer.offsetWidth) {
-      const feeties = Feeties[feetiesIndex];
-      feeties.style.display = "block"; // make visible
-      feeties.style.right = `${characterRight}px`; // Update print position
-      feeties.style.bottom = "10%"; // prints are always near bottom of footer
-      feetiesIndex = (feetiesIndex + 1) % maxFeeties; // Cycling through pool
-    }
-  }, interval);
-});
-
-</script>
 
 </body>
 </html>
