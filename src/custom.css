@@ -1,3 +1,19 @@
+* {
+  cursor: url('Assets/flower.png'), auto;
+
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  cursor: url('Assets/flower.png'), pointer;
+
+}
+
+.carousel-indicators li:hover {
+  cursor: url('Assets/flower.png'), pointer;
+
+}
+
 /*animated background starts here*/
 body {
   margin: 0;
@@ -38,10 +54,9 @@ body {
   }
 }
 
-
-
-
 /*animated background ends here*/
+
+
 
 a.navbar-brand {
   color: rgb(255, 255, 255) !important;
@@ -124,10 +139,29 @@ body .header-container {
 }
 
 
-.card {
-  border: 1px solid rgb(255, 0, 0);
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
 
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
+.card {
+  opacity: 0;
+  animation: bounceIn 0.8s ease-out forwards;
+  border: 1px solid rgb(255, 0, 0);
+}
+
 
 .tooltip {
   background-color: transparent;
