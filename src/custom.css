@@ -1,16 +1,16 @@
 * {
-  cursor: url('Assets/flower.png'), auto;
+  cursor: url('Assets/cursor.png'), auto;
 
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  cursor: url('Assets/flower.png'), pointer;
+  cursor: url('Assets/cursor.png'), pointer;
 
 }
 
 .carousel-indicators li:hover {
-  cursor: url('Assets/flower.png'), pointer;
+  cursor: url('Assets/cursor.png'), pointer;
 
 }
 
