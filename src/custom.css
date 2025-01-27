@@ -57,16 +57,32 @@ body {
 /*animated background ends here*/
 
 
-
-a.navbar-brand {
-  color: rgb(255, 255, 255) !important;
-  font-size: 90%;
+h1{
+  color: white;
+  font-family: "silkscreen", "Courier new";
+  font-size: 20px;
 }
 
-a.navbar-brand:hover {
-  color: rgb(231, 0, 0) !important;
-  font-size: 90%;
-  transition: 2s color;
+.nav{
+  display:flex;
+  align-items: center;
+}
+.nav-icon {
+  max-height: 10px;
+  width: auto;
+}
+
+.nav-icon[src="Assets/github2.png"], 
+.nav-icon[src="Assets/linkedin2.png"] {
+  max-height: 20px;
+  width: auto;
+}
+
+.nav-icon:hover {
+  transform: scale(1.2); 
+  filter: brightness(1.5); 
+  transition: 1s;
+
 }
 
 
@@ -120,7 +136,7 @@ body .header-container {
 }
 
 .container {
-  background-color: rgba(85, 85, 85, 0.562);
+  background-color: rgba(66, 66, 66, 0.562);
   border-radius: 1.5vh;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -176,7 +192,7 @@ body .header-container {
 }
 
 .col {
-  background-color: rgba(255, 255, 255, 0.652);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   border-radius: .5vh;
   padding: 0vh;
