@@ -5,8 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   container.classList.add("show");
 });
 
-
-
+document.addEventListener("DOMContentLoaded", () => {
+  window.scrollToContent = function () {
+    const content = document.getElementById("main-content");
+    if (content) {
+      content.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+});
 //For working tooltips
 document.addEventListener("DOMContentLoaded", function () {
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));

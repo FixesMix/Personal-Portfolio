@@ -1,26 +1,42 @@
 * {
   cursor: url('Assets/cursor.png'), auto;
-
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(49, 49, 49);
+  border: 1px solid black;
+}
+
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   cursor: url('Assets/cursor.png'), pointer;
-
 }
 
 .carousel-indicators li:hover {
   cursor: url('Assets/cursor.png'), pointer;
-
 }
 
 /*animated background starts here*/
 body {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(49, 49, 49) black;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: 'Courier New', Courier, monospace;
   position: relative;
   background-color: rgb(27, 27, 27);
+  scroll-behavior: smooth;
 }
 
 
@@ -34,10 +50,6 @@ body {
     linear-gradient(to bottom, rgb(51, 51, 51) 1px, transparent 1px);
   background-size: 50px 50px;
   /* Line spacing */
-
-
-
-
   animation: moveBackground 5s linear infinite;
   z-index: -1;
 }
@@ -56,31 +68,56 @@ body {
 
 /*animated background ends here*/
 
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: none;
+  color: white;
+  z-index: 1;
+}
 
-h1{
+.hero-enter {
+  transition: 1s;
+}
+
+.hero-enter:hover {
+  background-color: rgb(37, 37, 37);
+  color: red;
+}
+
+h2 {
+  color: white;
+  font-family: "silkscreen", "Courier new";
+}
+
+h1 {
   color: white;
   font-family: "silkscreen", "Courier new";
   font-size: 20px;
 }
 
-.nav{
-  display:flex;
+.nav {
+  display: flex;
   align-items: center;
 }
+
 .nav-icon {
   max-height: 10px;
   width: auto;
 }
 
-.nav-icon[src="Assets/github2.png"], 
+.nav-icon[src="Assets/github2.png"],
 .nav-icon[src="Assets/linkedin2.png"] {
   max-height: 20px;
   width: auto;
 }
 
 .nav-icon:hover {
-  transform: scale(1.2); 
-  filter: brightness(1.5); 
+  transform: scale(1.2);
+  filter: brightness(1.5);
   transition: 1s;
 
 }
@@ -116,7 +153,6 @@ a:active {
 
 }
 
-
 /* Main container*/
 .content {
   position: relative;
@@ -125,7 +161,6 @@ a:active {
   color: rgb(43, 43, 43);
   text-align: center;
 }
-
 
 body .header-container {
   background-color: rgba(44, 44, 44, 0.404);
@@ -139,6 +174,7 @@ body .header-container {
   background-color: rgba(66, 66, 66, 0.562);
   border-radius: 1.5vh;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 
@@ -153,7 +189,6 @@ body .header-container {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 @keyframes bounceIn {
   0% {
@@ -178,7 +213,6 @@ body .header-container {
   border: 1px solid rgb(255, 0, 0);
 }
 
-
 .tooltip {
   background-color: transparent;
   border: 1px solid rgb(255, 255, 255);
@@ -198,13 +232,11 @@ body .header-container {
   padding: 0vh;
 }
 
-
 p {
   background-color: rgba(243, 243, 243, 0);
   padding: 1%;
   border-radius: 5%;
 }
-
 
 /*slideshow*/
 .carousel-inner {
@@ -235,13 +267,7 @@ p {
   background-color: rgba(44, 44, 44, 0.404);
 }
 
-
-
-
-
 /*Mallow making footprints*/
-
-
 .sliding-footer {
   overflow: hidden;
   position: relative;
@@ -260,7 +286,6 @@ p {
   z-index: 10;
 }
 
-
 @keyframes walkInfinite {
   0% {
     right: -5%;
@@ -270,7 +295,6 @@ p {
     right: 120%;
   }
 }
-
 
 .feeties {
   position: absolute;
