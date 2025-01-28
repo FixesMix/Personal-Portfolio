@@ -57,7 +57,7 @@
   <div class="container my-5 p-4 fade-in">
     <div class="row">
       <div class="col d-flex justify-content-center align-items-center">
-        <div class="card" style="width:18rem;">
+        <div class="card" style="width:18rem">
           <div class="card-body">
             <p class="card-text"> lorem ipsulorem ipsulorem ipsulorem ipsulorem ipsu
               lorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem ipsulorem 
@@ -70,7 +70,7 @@
           </ul>
         <div class="contact d-flex justify-content-center align-items-center">
           <br><br><br>
-          <img src="Assets/mail.png" data-bs-toggle="tooltip" data-bs-placement="right" title="Contact me?">
+          <img src="Assets/mail.png" data-bs-toggle="modal" data-bs-target="#emailModal">
         </div>
 
         </div>
@@ -113,7 +113,39 @@
     </div>
   </div>
   
-  
+  <!--On letter click, modal form appearance-->
+ <div class="modal fade" id="emailModal" aria-labeledby="emailModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form>
+        <div class="row">  
+          <div class="col d-flex justify-content-center align-items-center">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" aria-described-by="Name" placeholder="Name"></textarea>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center align-items-center">
+            <div class="form-group">
+             <input type="email" class="form-control" id="emailMe" aria-described-by="enterEmail" placeholder="XXX@xxx.com">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+              <div class="form-group">
+                <textarea class="form-control" id="message" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+    </div>
+  </div>
+  </div>
 
 <!--Fancy Mallow footer-->
 <footer class="footer-container container text-center text-white py-3">

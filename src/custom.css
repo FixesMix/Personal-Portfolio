@@ -17,6 +17,7 @@
 }
 
 
+
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   cursor: url('Assets/cursor.png'), pointer;
@@ -65,8 +66,46 @@ body {
 
   }
 }
-
 /*animated background ends here*/
+
+/*same animation as background*/
+.modal {
+  background: linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
+  linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px);
+  background-size: 50px 50px;  animation: moveBackground 5s linear infinite;
+  background-color: black;
+}
+.modal-content {
+  background-color: rgb(24, 24, 24);
+  border: 1px solid white;
+}
+
+.close{
+  background: rgb(44, 44, 44);
+  border: 3px outset rgb(100, 100, 100);
+  color: rgb(194, 194, 194);
+
+}
+
+.close:hover{
+  background-color: rgb(17, 17, 17);
+  transform: scale(.95);
+  transition: 1s color;
+  
+}
+form {
+  max-width: 40vw;
+}
+
+#message{
+  max-width: 20vw;
+}
+
+.form-control {
+  border: 1px dotted white;
+}
+
+
 
 .hero {
   height: 100vh;
