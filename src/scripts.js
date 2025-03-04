@@ -1,10 +1,24 @@
 //fade in Main Container on startup.JS
 
 document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2 });
+
+
+
   const container = document.querySelector(".fade-in");
-  container.classList.add("show");
+  if (container){
+    observer.observe(container);
+  }
 });
 
+//modal scroll
 document.addEventListener("DOMContentLoaded", () => {
   window.scrollToContent = function () {
     const content = document.getElementById("main-content");
