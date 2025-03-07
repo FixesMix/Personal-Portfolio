@@ -35,6 +35,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//fetching
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const responseMessage = document.getElementById("responseMessage");
+
+  form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let formData = new FormData(form);
+      console.log("Sending data:", Object.fromEntries(formData));
+
+      fetch("http://localhost/tuck_message.php", {
+          method: "POST",
+          body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+          responseMessage.innerText = data; 
+      })
+      .catch(error => console.error("Error:", error));
+  });
+});
+
+
+
 
 //For mallow feeties
 document.addEventListener("DOMContentLoaded", () => {

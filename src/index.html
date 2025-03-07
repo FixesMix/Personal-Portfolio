@@ -122,28 +122,33 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form>
-        <div class="row">  
-          <div class="col d-flex justify-content-center align-items-center">
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" aria-described-by="Name" placeholder="Name"></textarea>
+      <div class="modal-body d-flex justify-content-center">
+      <form id="contactForm" action="http://localhost/tuck_message.php" method="POST">
+        <div class="row gx-3">  
+          <div class="col-12 col-md-6">
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" id="name" name="name" aria-described-by="Name" placeholder="Name" required></textarea>
             </div>
           </div>
-          <div class="col d-flex justify-content-center align-items-center">
-            <div class="form-group">
-             <input type="email" class="form-control" id="emailMe" aria-described-by="enterEmail" placeholder="XXX@xxx.com">
+          <div class="col-12 col-md-6">
+            <div class="form-group mt-3">
+             <input type="email" class="form-control" id="emailMe" name="email" aria-described-by="enterEmail" placeholder="XXX@xxx.com" required>
             </div>
           </div>
-          <div class="row">
-            <div class="col d-flex justify-content-center align-items-center">
-              <div class="form-group">
-                <textarea class="form-control" id="message" rows="5" placeholder="..."></textarea>
-              </div>
+          <div class="row mt-2">
+            <div class="col-12">
+              <div class="form-group mt-3">
+                <textarea class="form-control w-100" id="message" name="message" rows="5" placeholder="..." required></textarea>
+              </div>   
             </div>
+          </div>
+          <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </div>
     </form>
     </div>
+  </div>
   </div>
   </div>
 
