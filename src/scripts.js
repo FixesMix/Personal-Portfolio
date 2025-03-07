@@ -38,7 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 //fetching
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
-  const responseMessage = document.getElementById("responseMessage");
+
+  if (!form) {
+      console.error("Form not found!");
+      return;
+  }
 
   form.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -52,11 +56,48 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(response => response.text())
       .then(data => {
-          responseMessage.innerText = data; 
+          console.log("Server Response:", data);
+
+          //closes modal after submission
+          const modalElement = document.getElementById("emailModal");
+          const modalInstance = bootstrap.Modal.getInstance(modalElement);
+          if (modalInstance) {
+              modalInstance.hide();
+          }
+
+          //success popup
+          let responseMessage = document.getElementById("responseMessage");
+          if (!responseMessage) {
+              responseMessage = document.createElement("p");
+              responseMessage.id = "responseMessage";
+              responseMessage.style.position = "fixed";
+              responseMessage.style.bottom = "20px";
+              responseMessage.style.left = "50%";
+              responseMessage.style.transform = "translateX(-50%)";
+              responseMessage.style.padding = "10px";
+              responseMessage.style.backgroundColor = "rgba(205, 0, 0, 0.8)";
+              responseMessage.style.color = "white";
+              responseMessage.style.borderRadius = "5px";
+              responseMessage.style.fontSize = "16px";
+              document.body.appendChild(responseMessage);
+          }
+
+          responseMessage.innerText = "Message sent successfully!";
+          responseMessage.style.display = "block";
+
+          //clears
+          form.reset();
+          
+          setTimeout(() => {
+              responseMessage.style.display = "none";
+          }, 3000);
       })
-      .catch(error => console.error("Error:", error));
+      .catch(error => {
+          console.error("Error:", error);
+      });
   });
 });
+
 
 
 

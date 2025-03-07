@@ -185,6 +185,11 @@ h1 {
   width: auto;
 }
 
+.nav-icon[src="Assets/resume.png"] {
+  max-height: 33px;
+  width: auto;
+}
+
 .nav-icon:hover {
   transform: scale(1.2);
   filter: brightness(1.5);
@@ -276,6 +281,8 @@ body .header-container {
     transform: scale(1);
   }
 }
+
+
 
 button[type="submit"]{
  background-color: rgb(42, 42, 42);
