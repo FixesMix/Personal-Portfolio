@@ -359,9 +359,13 @@ p {
   filter: brightness(1.1);
 
 }
+.footer{
+  margin-bottom: 1vw;
+}
 
 .footer-container {
   background-color: rgba(44, 44, 44, 0.404);
+  margin-bottom: 1vw;
 }
 
 /*Mallow making footprints*/
