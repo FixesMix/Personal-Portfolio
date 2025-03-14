@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
       let formData = new FormData(form);
       console.log("Sending data:", Object.fromEntries(formData));
 
-      fetch("http://localhost/tuck_message.php", {
-          method: "POST",
-          body: formData
-      })
+      fetch("https://auraa.tech/tuck_message.php", {
+        method: "POST",
+        body: formData
+    })
       .then(response => response.text())
       .then(data => {
           console.log("Server Response:", data);
