@@ -308,6 +308,16 @@ button[type="submit"]:hover{
   opacity: 0;
   animation: bounceIn 0.8s ease-out forwards;
   border: 1px solid rgb(255, 0, 0);
+  width: 100%;
+  max-width: 18rem;
+  margin: auto;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 100rem;
+  max-height: 80rem;
+  margin: auto;
 }
 
 .tooltip {
@@ -343,12 +353,47 @@ p {
 }
 
 .carousel-inner img {
-  height: 100%;
+  height: 100;
   width: 100%;
   object-fit: cover;
   background-color: #ddd;
-
+  
 }
+
+@media (max-width: 1024px) {
+  .card, .carousel {
+      max-height: 25rem; /* Extends downward for better viewing */
+      max-width: none; 
+      max-width: 18rem;
+      align-items: center;
+      display:flex;
+      min-height: 100%;
+  }
+
+  .carousel-inner img {
+      object-fit: contain; 
+      width: auto;
+      max-height: 25rem; 
+  }
+}
+
+@media (width: 1280px) {
+  .card, .carousel {
+      max-height: 27rem; /* Extends down */
+      max-width: none; 
+      max-width: 60rem;
+      align-items: center;
+      display:flex;
+      min-height: 100%;
+  }
+
+  .carousel-inner img {
+      object-fit: contain; 
+      width: auto;
+      max-height: 27rem; 
+  }
+}
+
 
 .carousel-item img {
   transition: filter 0.3s ease;
