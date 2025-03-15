@@ -363,10 +363,9 @@ p {
 @media (max-width: 1024px) {
   .card, .carousel {
       max-height: 25rem; /* Extends downward for better viewing */
-      max-width: none; 
       max-width: 18rem;
       align-items: center;
-      display:flex;
+      display: flex;
       min-height: 100%;
   }
 
@@ -380,7 +379,6 @@ p {
 @media (width: 1280px) {
   .card, .carousel {
       max-height: 27rem; /* Extends down */
-      max-width: none; 
       max-width: 60rem;
       align-items: center;
       display:flex;
